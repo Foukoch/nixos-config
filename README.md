@@ -17,6 +17,7 @@ Pour le reste, se référer aux dotfiles ~/nixos-config/dotfiles/hypr/conf/bindi
 ```
 ## Structure :
 ```
+~/nixos-config/
 ├── dotfiles
 │   ├── inkscape
 │   │   ├── palettes -> /nix/store/9k8snmg0j8z7vk3v64n3h4md139kn7hl-home-manager-files/.config/inkscape/palettes
@@ -178,8 +179,8 @@ Pour le reste, se référer aux dotfiles ~/nixos-config/dotfiles/hypr/conf/bindi
 ├── rebuild.sh
 ├── secrets
 │   └── secrets.yaml
-└── update.sh```
-
+└── update.sh
+```
 ## Installation :
 1. Installer NixOS sur clé USB (via Rufus sous windows par exemple)
 2. Boot sur clé USB
