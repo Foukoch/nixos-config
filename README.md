@@ -16,40 +16,169 @@ MAJ K ou J : envoie la fenêtre courante dans le workspace à droite ou à gauch
 Pour le reste, se référer aux dotfiles ~/nixos-config/dotfiles/hypr/conf/binding.lua
 ```
 ## Structure :
-```shell
-~/nixos-config/
-├── flake.nix
-│   # permet de fixer la source/version des packages utilisés et du point d'entrée user / host
-├── flake.lock
-├── hosts/
-│   # configuration système
-│   ├── nixos-home/
-│   │   # mon host PC maison
-│   │   └── nixos/
-│   │       ├── configuration.nix           # entrée des fichiers de configuration
-│   │       ├── hardware-configuration.nix  # fichier hardware généré à l'installation
-│   │       └── config/                     # tous fichiers config système (packages et services)
-│   │           └── ...
-│   └── nixos-laptop/
-│       # mon host PC travail
-│       └── nixos/
-│           ├── configuration.nix           # entrée des fichiers de configuration
-│           ├── hardware-configuration.nix  # fichier hardware généré à l'installation
-│           └── config/                     # tous fichiers config système (packages et services)
-│               └── ...
-├── home/       
-│   # configuration user
-│   └── afoucaultc/
-│       # mon user
-│       ├── home.nix                # point d'entrée home-manager classique
-│       ├── home_laptop.nix         # point d'entrée home-manager pour machine light
-│       ├── dotfiles_apps.nix       # liens vers mes dossier de configuration
-│       └── packages/               # lien vers les packages installés sur mon user
-│            └── ...
-├── install.sh  # script d'installation 
-├── rebuild.sh  # script de rebuild
-└── update.sh   # script d'update
 ```
+├── dotfiles
+│   ├── inkscape
+│   │   ├── palettes -> /nix/store/9k8snmg0j8z7vk3v64n3h4md139kn7hl-home-manager-files/.config/inkscape/palettes
+│   │   ├── palettes.backup
+│   │   │   ├── palette.gpl
+│   │   │   └── template_latex.svg
+│   │   ├── templates -> /nix/store/9k8snmg0j8z7vk3v64n3h4md139kn7hl-home-manager-files/.config/inkscape/templates
+│   │   └── templates.backup
+│   │       ├── default.svg
+│   │       └── LaTeX_modele.svg
+│   ├── rofi
+│   │   ├── config.rasi
+│   │   ├── tokyonight_big1.rasi
+│   │   ├── tokyonight_big2.rasi
+│   │   └── tokyonight.rasi
+│   └── wallpaper
+│       └── nix-wallpaper.png
+├── flake.lock
+├── flake.nix
+├── home
+│   └── main
+│       ├── config
+│       │   ├── code
+│       │   │   ├── python.nix
+│       │   │   └── texlive.nix
+│       │   ├── packages
+│       │   │   ├── packagesLight.nix
+│       │   │   └── packages.nix
+│       │   ├── programs
+│       │   │   ├── others
+│       │   │   │   ├── btop.nix
+│       │   │   │   ├── firefox.nix
+│       │   │   │   ├── mpv.nix
+│       │   │   │   ├── obs.nix
+│       │   │   │   ├── thunderbird.nix
+│       │   │   │   ├── zathura.nix
+│       │   │   │   └── zen.nix
+│       │   │   ├── terminal
+│       │   │   │   ├── kitty.nix
+│       │   │   │   ├── neovim
+│       │   │   │   │   ├── config
+│       │   │   │   │   │   ├── extrafiles.nix
+│       │   │   │   │   │   ├── extrapackages.nix
+│       │   │   │   │   │   ├── extraplugins.nix
+│       │   │   │   │   │   ├── globals.nix
+│       │   │   │   │   │   ├── keymaps.nix
+│       │   │   │   │   │   └── plugins.nix
+│       │   │   │   │   ├── lua
+│       │   │   │   │   │   ├── autocmd.lua
+│       │   │   │   │   │   ├── lsp-config.lua
+│       │   │   │   │   │   ├── remap.lua
+│       │   │   │   │   │   └── settings.lua
+│       │   │   │   │   ├── neovim.nix
+│       │   │   │   │   ├── plugins
+│       │   │   │   │   │   ├── blink-cmp.nix
+│       │   │   │   │   │   ├── conform-nvim.nix
+│       │   │   │   │   │   ├── gitsigns.nix
+│       │   │   │   │   │   ├── lsp.nix
+│       │   │   │   │   │   ├── lualine.nix
+│       │   │   │   │   │   ├── luasnip.nix
+│       │   │   │   │   │   ├── mini.nix
+│       │   │   │   │   │   ├── neogit.nix
+│       │   │   │   │   │   ├── noice.nix
+│       │   │   │   │   │   ├── oil.nix
+│       │   │   │   │   │   ├── snacks.nix
+│       │   │   │   │   │   ├── telescope.nix
+│       │   │   │   │   │   ├── tmux-navigator.nix
+│       │   │   │   │   │   ├── treesitter.nix
+│       │   │   │   │   │   ├── vimtex.nix
+│       │   │   │   │   │   ├── web-devicons.nix
+│       │   │   │   │   │   └── which-key.nix
+│       │   │   │   │   └── snippets
+│       │   │   │   │       ├── matlab.lua
+│       │   │   │   │       └── tex.lua
+│       │   │   │   ├── tmux.nix
+│       │   │   │   └── zsh.nix
+│       │   │   └── window-manager
+│       │   │       ├── mako.nix
+│       │   │       └── niri
+│       │   │           ├── conf
+│       │   │           │   ├── animations.nix
+│       │   │           │   ├── gestures.nix
+│       │   │           │   ├── input.nix
+│       │   │           │   ├── keybind.nix
+│       │   │           │   ├── layer-rules.nix
+│       │   │           │   ├── layout.nix
+│       │   │           │   ├── misc.nix
+│       │   │           │   ├── output.nix
+│       │   │           │   ├── window-rules.nix
+│       │   │           │   └── workspaces.nix
+│       │   │           ├── niri.nix
+│       │   │           └── settings.nix
+│       │   └── system
+│       │       ├── emailAccounts.nix
+│       │       ├── git.nix
+│       │       ├── nextcloud.nix
+│       │       ├── security.nix
+│       │       └── vpnOpenconnect.nix
+│       ├── externalDotfiles.nix
+│       ├── home-laptop.nix
+│       ├── home.nix
+│       ├── README.md
+│       └── shared.nix
+├── hosts
+│   ├── common
+│   │   ├── basesystem
+│   │   │   ├── bluetooth.nix
+│   │   │   ├── language.nix
+│   │   │   ├── secrets.nix
+│   │   │   ├── SPEC_home
+│   │   │   │   ├── boot.nix
+│   │   │   │   ├── drivers_video.nix
+│   │   │   │   ├── memory.nix
+│   │   │   │   ├── power_management.nix
+│   │   │   │   └── system.nix
+│   │   │   ├── SPEC_laptop
+│   │   │   │   ├── boot.nix
+│   │   │   │   ├── drivers_video.nix
+│   │   │   │   ├── memory.nix
+│   │   │   │   ├── power_management.nix
+│   │   │   │   └── system.nix
+│   │   │   ├── system_saves.nix
+│   │   │   └── users.nix
+│   │   ├── niri.nix
+│   │   ├── programs
+│   │   │   └── SPEC_home
+│   │   │       ├── gamescope.nix
+│   │   │       ├── phone.nix
+│   │   │       └── steam.nix
+│   │   ├── services
+│   │   │   ├── fwupd.nix
+│   │   │   ├── gnome-keyring.nix
+│   │   │   ├── greetd.nix
+│   │   │   ├── gvfs.nix
+│   │   │   ├── mullvad.nix
+│   │   │   ├── openconnect.nix
+│   │   │   ├── protonmail.nix
+│   │   │   ├── sound.nix
+│   │   │   ├── SPEC_home
+│   │   │   │   └── avahi.nix
+│   │   │   ├── ssh-keys.nix
+│   │   │   └── vpn_travail.nix
+│   │   ├── style
+│   │   │   ├── fonts.nix
+│   │   │   └── stylix.nix
+│   │   ├── system_packages.nix
+│   │   └── wayland.nix
+│   ├── nixos-home
+│   │   ├── configuration.nix
+│   │   └── hardware-configuration.nix
+│   ├── nixos-laptop
+│   │   ├── configuration.nix
+│   │   └── hardware-configuration.nix
+│   └── README.md
+├── install.sh
+├── LICENSE
+├── local_exemple.nix
+├── README.md
+├── rebuild.sh
+├── secrets
+│   └── secrets.yaml
+└── update.sh```
 
 ## Installation :
 1. Installer NixOS sur clé USB (via Rufus sous windows par exemple)
