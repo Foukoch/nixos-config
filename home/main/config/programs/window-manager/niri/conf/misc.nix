@@ -8,7 +8,7 @@
         command = [
           "swaybg"
           "-i"
-          "${config.home.homeDirectory}/nixos-config/dotfiles/wallpaper/moebius.jpg"
+          "${config.home.homeDirectory}/nixos-config/dotfiles/wallpaper/nix-wallpaper.jpg"
         ];
       }
     ];
