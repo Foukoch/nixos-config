@@ -1,0 +1,12 @@
+keys:
+  - &user_afoucaultc age1fyqcy4sa4enewcfrz9ae9dyxh5rh645v43qztsxd5yfu5ahup5qs2cepag
+  - &host_nixos_home age10j5gm6f63ck4kul3yacg379j0p0nn4qngpnnsp3prqhr9tkazahq8aghcz
+  - &host_nixos_laptop age1jx0hes4ukerv2gfaacnwt6ngxqrc03exedh4eqmfygchqenlevqs6hcfcz
+
+creation_rules:
+  - path_regex: secrets/secrets\.yaml$
+    key_groups:
+      - age:
+          - *user_afoucaultc
+          - *host_nixos_home
+          - *host_nixos_laptop

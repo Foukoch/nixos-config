@@ -1,0 +1,17 @@
+# hosts/*/hardware-configuration.nix
+# nix build results
+result
+result-*
+# LaTeX artifacts
+.aux-tex/
+*.aux
+*.log
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+indent.log
+# direnv
+.direnv/
+.envrc
+# local
+local.nix

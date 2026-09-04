@@ -1,0 +1,5 @@
+*.spl  linguist-generated
+*.sug  linguist-generated
+spell/**  linguist-vendored
+markdown.css  linguist-vendored
+lazy-lock.json  linguist-generated
