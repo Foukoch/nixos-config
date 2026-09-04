@@ -1,8 +1,6 @@
 # How to use
 ## Raccourcis utiles
 ```
-Lancer start-hyprland dans le tty au démarrage
-
 ALT Q : ouvre le terminal
 ALT N : ouvre neovim
 ALT W : ouvre le sélecteurs de programmes
@@ -10,11 +8,29 @@ ALT X : ouvre le sélecteur de fenêtre
 ALT C : ouvre le sélecteur de dossier
 ALT D : ouvre le gestionnaire de fichiers
 
-MAJ L ou H : change de workspace à droite ou à gauche
-MAJ K ou J : envoie la fenêtre courante dans le workspace à droite ou à gauche
+CTRL + ALT + SUPPR : verrouillage écran
 
-Pour le reste, se référer aux dotfiles ~/nixos-config/dotfiles/hypr/conf/binding.lua
+mvt (hjkl vim):
+    h gauche
+    j bas
+    k haut
+    l droite
+    a écran principal
+    b écran secondaire
+
+ALT + mvt : change de focus
+    h/l gauche droite
+    j/k espace supérieur/inférieur
+CMD + mvt : déplace la fenêtre
+    h/l gauche droite
+    j/k espace supérieur/inférieur
+
+CTRL + W : switch flottant
+ALT + click gauche : déplacer flottant
+ALT + click droit : resize flottant
 ```
+
+Pour le reste, se référer à la config niri dans `home/main/config/programs/window-manager/niri/conf/keybind`
 ## Structure :
 ```
 ~/nixos-config/

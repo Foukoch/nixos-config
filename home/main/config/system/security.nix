@@ -12,7 +12,7 @@
   };
   # sops secrets management
   sops.age.keyFile = "/var/lib/sops-nix/key.txt";
-  sops.defaultSopsFile = ../../../secrets/secrets.yaml; # ajustez selon l'emplacement réel de CE fichier
+  sops.defaultSopsFile = ../../../../secrets/secrets.yaml; # ajustez selon l'emplacement réel de CE fichier
   sops.defaultSopsFormat = "yaml";
   # ssh management
   programs.ssh = {
